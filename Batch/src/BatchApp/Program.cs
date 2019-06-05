@@ -60,8 +60,8 @@ namespace BatchApp
 
                   List<CloudTask> tasks = new List<CloudTask>();
 
-                     for (int i = 0; i < inputFiles.Count; i++)
-                    {
+                  for (int i = 0; i < inputFiles.Count; i++)
+                  {
                         string taskId = String.Format("Task{0}", i);
                         string inputFilename = inputFiles[i].FilePath;
                         string taskCommandLine = String.Format("cmd /c type {0}", inputFilename);
@@ -69,12 +69,37 @@ namespace BatchApp
                         CloudTask task = new CloudTask(taskId, taskCommandLine);
                         task.ResourceFiles = new List<ResourceFile> { inputFiles[i] };
                         tasks.Add(task);
-                    }    
+                   }    
 
                     batchClient.JobOperations.AddTask(JobId, tasks);       
-                    
-                        
 
+                    TimeSpan timeout = TimeSpan.FromMinutes(30);
+                    Console.WriteLine("Monitoring all tasks for 'Completed' state, timeout in {0}...", timeout);
+
+                    IEnumerable<CloudTask> addedTasks = batchClient.JobOperations.ListTasks(JobId);
+                
+                    batchClient.Utilities.CreateTaskStateMonitor().WaitAll(addedTasks, TaskState.Completed, timeout);
+
+                    // List tasks 
+
+                    IEnumerable<CloudTask> completedtasks = batchClient.JobOperations.ListTasks(JobId);
+
+                    foreach (CloudTask task in completedtasks)
+                    {
+                        string nodeId = String.Format(task.ComputeNodeInformation.ComputeNodeId);
+                        Console.WriteLine("Task: {0}", task.Id);
+                        Console.WriteLine("Node: {0}", nodeId);
+                        Console.WriteLine("Standard out:");
+                        Console.WriteLine(task.GetNodeFile(Constants.StandardOutFileName).ReadAsString());
+                    }
+
+                    // delete job 
+
+                    batchClient.JobOperations.DeleteJob(JobId);
+
+                    // delete pool
+
+                    batchClient.PoolOperations.DeletePool(PoolId);
             }
         }
 
@@ -86,7 +111,6 @@ namespace BatchApp
                         CloudJob job = batchClient.JobOperations.CreateJob();
                         job.Id = JobId;
                         job.PoolInformation = new PoolInformation { PoolId = PoolId };
-
                         job.Commit();
                     }
                     catch (BatchException be)
