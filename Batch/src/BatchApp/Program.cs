@@ -25,26 +25,131 @@ namespace BatchApp
         private const string StorageAccountKey = "";
 
 
-
+        private const string PoolId = "DotNetQuickstartPool";
+        private const string JobId = "DotNetQuickstartJob";
+        private const int PoolNodeCount = 2;
+        private const string PoolVMSize = "STANDARD_A1_v2";
+      
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
             CloudBlobClient blobClient = CreateCloudBlobClient(StorageAccountName, StorageAccountKey);
            
-            UploadWorkFiles(blobClient);
+            var files = UploadWorkFiles(blobClient);
 
-            StartBatchTasks();
+            StartBatchTasks(files);
         }
 
-        private static void StartBatchTasks()
+        private static void StartBatchTasks(List<ResourceFile> inputFiles)
         {
             
             BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials(BatchAccountUrl, BatchAccountName, BatchAccountKey);
 
+            using (BatchClient batchClient = BatchClient.Open(cred))
+            {
+
+                  // Create a Windows Server image, VM configuration, Batch pool
+                  ImageReference imageReference = CreateImageReference();
+
+                  VirtualMachineConfiguration vmConfiguration = CreateVirtualMachineConfiguration(imageReference);
+
+                  CreateBatchPool(batchClient, vmConfiguration);
+
+                  CreateJob(batchClient);
+
+                  List<CloudTask> tasks = new List<CloudTask>();
+
+                     for (int i = 0; i < inputFiles.Count; i++)
+                    {
+                        string taskId = String.Format("Task{0}", i);
+                        string inputFilename = inputFiles[i].FilePath;
+                        string taskCommandLine = String.Format("cmd /c type {0}", inputFilename);
+
+                        CloudTask task = new CloudTask(taskId, taskCommandLine);
+                        task.ResourceFiles = new List<ResourceFile> { inputFiles[i] };
+                        tasks.Add(task);
+                    }    
+
+                    batchClient.JobOperations.AddTask(JobId, tasks);       
+                    
+                        
+
+            }
         }
 
-        private static void UploadWorkFiles(CloudBlobClient blobClient) {
+        private static void CreateJob(BatchClient batchClient) {
+
+
+               try
+                    {
+                        CloudJob job = batchClient.JobOperations.CreateJob();
+                        job.Id = JobId;
+                        job.PoolInformation = new PoolInformation { PoolId = PoolId };
+
+                        job.Commit();
+                    }
+                    catch (BatchException be)
+                    {
+                        // Accept the specific error code JobExists as that is expected if the job already exists
+                        if (be.RequestInformation?.BatchError?.Code == BatchErrorCodeStrings.JobExists)
+                        {
+                            Console.WriteLine("The job {0} already existed when we tried to create it", JobId);
+                        }
+                        else
+                        {
+                            throw; // Any other exception is unexpected
+                        }
+                    }
+        }
+
+
+        private static VirtualMachineConfiguration CreateVirtualMachineConfiguration(ImageReference imageReference)
+        {
+            return new VirtualMachineConfiguration(
+                imageReference: imageReference,
+                nodeAgentSkuId: "batch.node.windows amd64");
+        }
+
+
+
+          private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfiguration vmConfiguration)
+        {
+            try
+            {
+                CloudPool pool = batchClient.PoolOperations.CreatePool(
+                    poolId: PoolId,
+                    targetDedicatedComputeNodes: PoolNodeCount,
+                    virtualMachineSize: PoolVMSize,
+                    virtualMachineConfiguration: vmConfiguration);
+
+                pool.Commit();
+            }
+            catch (BatchException be)
+            {
+                // Accept the specific error code PoolExists as that is expected if the pool already exists
+                if (be.RequestInformation?.BatchError?.Code == BatchErrorCodeStrings.PoolExists)
+                {
+                    Console.WriteLine("The pool {0} already existed when we tried to create it", PoolId);
+                }
+                else
+                {
+                    throw; // Any other exception is unexpected
+                }
+            }
+        }
+
+
+        private static ImageReference CreateImageReference()
+        {
+            return new ImageReference(
+                publisher: "MicrosoftWindowsServer",
+                offer: "WindowsServer",
+                sku: "2016-datacenter-smalldisk",
+                version: "latest");
+        }
+
+        private static  List<ResourceFile> UploadWorkFiles(CloudBlobClient blobClient) {
 
             const string inputContainerName = "input";
             CloudBlobContainer container = blobClient.GetContainerReference(inputContainerName);       container.CreateIfNotExistsAsync().Wait();
@@ -64,6 +169,8 @@ namespace BatchApp
                 {
                     inputFiles.Add(UploadFileToContainer(blobClient, inputContainerName, filePath));
                 }
+
+                return  inputFiles;
         }
 
          private static CloudBlobClient CreateCloudBlobClient(string storageAccountName, string storageAccountKey)
