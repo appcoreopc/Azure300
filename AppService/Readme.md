@@ -10,8 +10,18 @@ Isolated tier - runs dedicated vpn
 
 
 Setting up service plan
+- basically going through and selecting the runtime, 
+plan etc. 
+
+
+build your app using common commands like 
+
+dotnet build 
+dotnet 
+
+
+az webapp deployment source config-zip --src website.zip --name <your-webapp-name> --resource-group 1455cbdd-8865-41a8-9773-8ba550f80eb8
 
 
 
-
-
+Goto App Service -> Monitoring -> Metrics 
