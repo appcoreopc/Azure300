@@ -25,3 +25,17 @@ az webapp deployment source config-zip --src website.zip --name <your-webapp-nam
 
 
 Goto App Service -> Monitoring -> Metrics 
+
+add common metrics, cpu response time, http errors, average request time 
+
+
+
+To scale out 
+
+-> App Service -> Scale out 
+
+To scale up 
+
+-> App service -> Scale up 
+
+
