@@ -6,7 +6,7 @@ Using namespace, queues + topics can be created.
 
 3 main component are :- 
 
-queue - intermediate storage for one direction communication 
+queue - intermediate storage for one direction communication. In a queue, messages are poll. 
 
 
 topic - enable one direction communicatio using subscription
