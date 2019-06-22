@@ -7,3 +7,10 @@ az acr create --name myregistry --resource-group mygroup --sku standard --admin-
 
 
 docker login myregistry.azurecr.io - login into azure container registry
+
+
+Next we will use a container instance to run it. 
+
+To provision one, we just have to do the following :- 
+
+
