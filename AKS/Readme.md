@@ -14,3 +14,4 @@ Next we will use a container instance to run it.
 To provision one, we just have to do the following :- 
 
 
+az container create --resource-group mygroup --name myinstance --image myregistryjerwo.azurecr.io/myapp:latest --dns-name-label mydnsname --registry-username myregistryjerwo --registry-password g2OKgL5BnPaRNu3lnf+rNK66mZxOtgCc
