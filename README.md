@@ -44,6 +44,8 @@ Storage account  types
 
 - blob storaege accounts - get a flavour of gpv2 but only for blob.
 
+Active directory stuff.
 
 
+https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-staging-server
 
