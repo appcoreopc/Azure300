@@ -30,9 +30,13 @@ https:
 Storage 
 
 
--Blob  (append, block and page)
+-Blob  (
+  -append - 195T 
+  -block - text or binary file up to ~5T 
+  -page - random access until 8T
 
--File 
+
+-File - highly available file shares (SMB - server message block)
 -Table
 -Queue 
 
