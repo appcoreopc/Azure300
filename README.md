@@ -8,7 +8,6 @@ https://docs.microsoft.com/en-sg/learn/browse/?roles=solution-architect&products
 az-300-exam-prep
 More area to study
 
-
 VM
 
 https://docs.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial
@@ -26,9 +25,7 @@ VPN
 https:
 
 
-
 Storage 
-
 
 -Blob  (
   -append - 195T 
@@ -41,8 +38,12 @@ Storage
 
 Storage account  types 
 
-- Gpv2 
-- Gpv1
-- blob storaege accounts 
+- Gpv2 - latest and greatest. alsmo more expensive. 
+
+- Gpv1 - cheaper but not latest
+
+- blob storaege accounts - get a flavour of gpv2 but only for blob.
+
+
 
 
