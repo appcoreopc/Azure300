@@ -8,6 +8,7 @@ https://docs.microsoft.com/en-sg/learn/browse/?roles=solution-architect&products
 az-300-exam-prep
 More area to study
 
+
 VM
 
 https://docs.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial
