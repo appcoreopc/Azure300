@@ -24,3 +24,15 @@ https://docs.microsoft.com/en-gb/azure/backup/backup-overview
 VPN
 
 https:
+
+
+
+Storage 
+
+
+-Blob  (append, block and page)
+
+-File 
+-Table
+-Queue 
+
