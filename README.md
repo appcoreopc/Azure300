@@ -35,8 +35,8 @@ Storage
   -block - text or binary file up to ~5T 
   -page - random access until 8T
 
-
 -File - highly available file shares (SMB - server message block)
 -Table
--Queue 
+-Queue - 64k message size queue shared between application for throttling reasons. 
+
 
