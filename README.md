@@ -39,4 +39,10 @@ Storage
 -Table
 -Queue - 64k message size queue shared between application for throttling reasons. 
 
+Storage account  types 
+
+- Gpv2 
+- Gpv1
+- blob storaege accounts 
+
 
