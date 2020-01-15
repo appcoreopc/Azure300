@@ -54,3 +54,8 @@ Active directory stuff.
 
 https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-staging-server
 
+Autoscale set
+
+https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-get-started
+
+
