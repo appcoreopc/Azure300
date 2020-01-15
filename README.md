@@ -58,4 +58,7 @@ Autoscale set
 
 https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-get-started
 
+Single sign on
+
+https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/what-is-single-sign-on
 
