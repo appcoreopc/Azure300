@@ -1,9 +1,5 @@
 Azure300
 
-I passed the Exam last Thursday 2/1/2020 , my score : 893/1000 .
-
-90% of the Exam was from this dump
-
 53 Questions ( 40 MCQ Qs , 1 Case Study - 4 Qs , 9 Lab Simulation Qs )
 
 Resources for hands on lab 
