@@ -66,3 +66,21 @@ OS disk size Up to 2,048 GB for generation 1 VMs.
 Up to 300 GB for generation 2 VMs.
 Data disk VHD size Up to 4,095 GB
 
+
+### Backup and recovery services for onprem 
+
+Install Recovery Services agent
+
+Download Agent for Windows Server or Windows Client
+
+Download vault credentials to register the server to the vault. Vault credentials will expire after 2 days.
+
+Already downloaded or using the latest Recovery Services Agent
+
+Schedule backup using Recovery Services Agent UI. Learn More
+
+Once the backups are scheduled, you can use backup jobs page to monitor the backups. Browse jobs page
+
+You can also Configure Notifications from alerts page to receive email alerts for backup failures. Browse alerts page
+
+
