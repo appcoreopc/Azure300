@@ -58,3 +58,11 @@ Single sign on
 
 https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/what-is-single-sign-on
 
+
+
+
+
+OS disk size Up to 2,048 GB for generation 1 VMs.
+Up to 300 GB for generation 2 VMs.
+Data disk VHD size Up to 4,095 GB
+
