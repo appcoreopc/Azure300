@@ -6,7 +6,6 @@ Resources for hands on lab
 
 https://docs.microsoft.com/en-sg/learn/browse/?roles=solution-architect&products=azure
 
-
 az-300-exam-prep
 More area to study
 
@@ -25,7 +24,6 @@ https://docs.microsoft.com/en-gb/azure/backup/backup-overview
 VPN
 
 https:
-
 
 Storage 
 
@@ -58,8 +56,6 @@ https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-get-star
 Single sign on
 
 https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/what-is-single-sign-on
-
-
 
 
 
