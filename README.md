@@ -2,6 +2,12 @@ Azure300
 
 53 Questions ( 40 MCQ Qs , 1 Case Study - 4 Qs , 9 Lab Simulation Qs )
 
+
+AD stuff 
+
+https://docs.microsoft.com/en-us/azure/active-directory/
+
+
 Resources for hands on lab 
 
 https://docs.microsoft.com/en-sg/learn/browse/?roles=solution-architect&products=azure
