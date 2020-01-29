@@ -5,6 +5,7 @@ Azure300
 
 AD stuff 
 
+
 https://docs.microsoft.com/en-us/azure/active-directory/
 
 
