@@ -123,6 +123,11 @@ You need to ensure that virtual machines can communicate across both virtual net
 The solution must NOT require any virtual network gateways.
 What should you do from the Azure portal?
 
+You may start the lab by clicking the Next button.
+Your on-premises network uses an IP address range of 131.107.2.0 to 131.107.2.255.
+You need to ensure that only devices from the on-premises network can connect to the rg1lod8322490n1 storage account.
+What should you do from the Azure portal?
+
 
 
 
