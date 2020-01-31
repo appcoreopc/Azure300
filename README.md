@@ -108,3 +108,21 @@ What should you do from the Azure portal?
 
 
 
+You plan to connect several virtual machines to the VNET01-USEA2 virtual network.
+In the Web-RGlod8322489 resource group, you need to create a virtual machine that uses the Standard_B2ms size named Web01 that runs Windows Server
+2016. Web01 must be added to an availability set.
+What should you do from the Azure portal?
+
+
+You plan to back up all the Azure virtual machines in your Azure subscription at 02:00 Coordinated Universal Time (UTC) daily.
+You need to prepare the Azure environment to ensure that any new virtual machines can be configured quickly for backup. The solution must ensure that all the daily backups performed at 02:00 UTC are stored for only 90 days.
+What should you do from your Recovery Services vault on the Azure portal?
+ 
+You plan to allow connections between the VNET01-USEA2 and VNET01-USWE2 virtual networks.
+You need to ensure that virtual machines can communicate across both virtual networks by using their private IP address.
+The solution must NOT require any virtual network gateways.
+What should you do from the Azure portal?
+
+
+
+
