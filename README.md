@@ -157,4 +157,28 @@ What should you do from the Azure portal?
 
 
 
+To start the lab -
+You may start the lab by clicking the Next button.
+You plan to host several secured websites on Web01.
+You need to allow HTTPS over TCP port 443 to Web01 and to prevent HTTP over TCP port 80 to Web01.
+What should you do from the Azure portal?
+
+
+Your on-premises network uses an IP address range of 131.107.2.0 to 131.107.2.255.
+You need to ensure that only devices from the on-premises network can connect to the rg1lod8322490n1 storage account.
+What should you do from the Azure portal?
+
+
+You plan to store media files in the rg1lod8322490 storage account.
+You need to configure the storage account to store the media files. The solution must ensure that only users who have access keys can download the media files and that the files are accessible only over HTTPS.
+What should you do from the Azure portal?
+
+Another administrator attempts to establish connectivity between two virtual networks named VNET1 and VNET2. The administrator reports that connections across the virtual networks fail.
+You need to ensure that network connections can be established successfully between VNET1 and VNET2 as quickly as possible.
+What should you do from the Azure portal?
+
+
+You plan to configure VM1 to be accessible from the internet.
+You need to add a public IP address to the network interface used by VM1.
+What should you do from the Azure portal?
 
