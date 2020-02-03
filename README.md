@@ -128,5 +128,7 @@ You need to ensure that only devices from the on-premises network can connect to
 What should you do from the Azure portal?
 
 
+You need to create a container named bios that will host the documents in the storagelod8322489 storage account. The solution must ensure anonymous access and must ensure that users can browse folders in the container.
+What should you do from the Azure portal?
 
 
