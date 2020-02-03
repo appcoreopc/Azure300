@@ -143,7 +143,17 @@ In the Web-RGlod8322489 resource group, you need to create a virtual machine tha
 2016. Web01 must be added to an availability set.
 What should you do from the Azure portal?
 
+You may start the lab by clicking the Next button.
+You recently created a virtual machine named Web01.
+You need to attach a new 80-GB standard data disk named Web01-Disk1 to Web01.
+What should you do from the Azure portal?
 
+
+
+You plan to allow connections between the VNET01-USEA2 and VNET01-USWE2 virtual networks.
+You need to ensure that virtual machines can communicate across both virtual networks by using their private IP address.
+The solution must NOT require any virtual network gateways.
+What should you do from the Azure portal?
 
 
 
