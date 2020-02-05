@@ -8,7 +8,6 @@ https://docs.microsoft.com/en-us/azure/backup/tutorial-sql-backup
 
 AD stuff 
 
-
 https://docs.microsoft.com/en-us/azure/active-directory/
 
 
