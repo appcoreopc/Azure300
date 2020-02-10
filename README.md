@@ -4,6 +4,8 @@ Azure300
 
 How to backup different types of resources
 
+
+
 https://docs.microsoft.com/en-us/azure/backup/tutorial-sql-backup
 
 AD stuff 
