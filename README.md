@@ -3,8 +3,6 @@ Azure300
 53 Questions ( 40 MCQ Qs , 1 Case Study - 4 Qs , 9 Lab Simulation Qs )
 
 
-
-
 How to backup different types of resources
 
 https://docs.microsoft.com/en-us/azure/backup/tutorial-sql-backup
@@ -90,7 +88,6 @@ Schedule backup using Recovery Services Agent UI. Learn More
 Once the backups are scheduled, you can use backup jobs page to monitor the backups. Browse jobs page
 
 You can also Configure Notifications from alerts page to receive email alerts for backup failures. Browse alerts page
-
 
 
 
