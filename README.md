@@ -3,7 +3,6 @@ Azure300
 
 53 Questions ( 40 MCQ Qs , 1 Case Study - 4 Qs , 9 Lab Simulation Qs )
 
-
 How to backup different types of resources
 
 https://docs.microsoft.com/en-us/azure/backup/tutorial-sql-backup
